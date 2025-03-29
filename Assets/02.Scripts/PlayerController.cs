@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneMangement;
 
@@ -21,8 +20,13 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(CryptoAPITransform.postition.y < -6)
         {
+            SeneManger.LoadScene("GameScene");
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && rigid2D.velocity.y.Equals(0))
+        {
+            ainmator.SetTrigger("Jump");
             rigid2D.AddForce(transform.up * jumpForce);
         }
 
