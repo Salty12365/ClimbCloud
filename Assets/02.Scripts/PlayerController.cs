@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneMangement;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,13 +20,13 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if(CryptoAPITransform.postition.y < -6)
+        if(transform.position.y < -6)
         {
-            SeneManger.LoadScene("GameScene");
+            SceneManager.LoadScene("GameScene");
         }
         if (Input.GetKeyDown(KeyCode.Space) && rigid2D.velocity.y.Equals(0))
         {
-            ainmator.SetTrigger("Jump");
+            animator.SetTrigger("Jump");
             rigid2D.AddForce(transform.up * jumpForce);
         }
 
@@ -59,6 +59,6 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("°ñÀÎ");
-        SceneManger.LoadScene("ClearScene");
+        SceneManager.LoadScene("ClearScene");
     }
 }

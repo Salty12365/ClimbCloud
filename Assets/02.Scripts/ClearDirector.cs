@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneMangement;
+using UnityEngine.SceneManagement;
 
 public class ClearDirector : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class ClearDirector : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            SceneManger.LoadScene("GameScene");
+            SceneManager.LoadScene("GameScene");
 
         }
     }
