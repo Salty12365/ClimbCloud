@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneMangement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,5 +50,11 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.speed = speedX/2.0f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("∞Ò¿Œ");
+        SceneManger.LoadScene("ClearScene");
     }
 }
